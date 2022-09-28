@@ -1,4 +1,5 @@
-export function log(text: string) {
+export function log(text: string):boolean {
     console.log(text);
     
+    return true
 }
