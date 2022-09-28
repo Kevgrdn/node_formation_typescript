@@ -5,7 +5,6 @@
 
     npm i
 
-- Renommer le fichier .env.copy par .env
-
+Renommer le fichier .env.copy par .env
 
     npm run dev:nodemon
