@@ -11,15 +11,18 @@
        "outDir": "./build",
        "emitDecoratorMetadata": true,
        "experimentalDecorators": true,
-       "sourceMap": true
+       "sourceMap": true,
+       "noImplicitAny": true,
+       "esModuleInterop":true
     },
     "files": [
         "src/main.ts"
     ],
     "include": [
-        "./src/"
+        "./src/**/*"
     ],
     "exclude": [
-        "./build"
+        "./build", 
+        "./src/**/*.spec.ts"
     ]
- }
+}
