@@ -6,5 +6,4 @@ export function init() {
 
     const appServer = new AppServer()
     appServer.start(port)
-
 }
