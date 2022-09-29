@@ -3,6 +3,9 @@ import {ModuleList} from '../common/interfaces'
 
 export const module: ModuleList = {
     'todos': {
-    controller: TodoController,
-    routes: routes
-}}
+        name: "todo",
+        routePrefix:"/todo",
+        controller: TodoController,
+        routes: routes
+    }
+}

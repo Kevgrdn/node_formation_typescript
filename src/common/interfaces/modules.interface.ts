@@ -4,6 +4,8 @@ import { ApiRoutes } from "./routes.interface";
 export interface Module {
     controller: Controller,
     routes: ApiRoutes[]
+    routePrefix: string
+    name: string
 }
 
 export interface ModuleList{

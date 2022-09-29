@@ -3,4 +3,5 @@ export interface ApiRoutes {
     path: string,
     method: string,
     action: string
+
 }
