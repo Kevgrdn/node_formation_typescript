@@ -1,10 +1,7 @@
 import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from "typeorm";
 import { TodoList } from "./todolist";
+import { TodoState } from "../../common/interfaces";
 
-enum TodoState {
-    DONE = "done",
-    TODO = "todo"
-}
 
 @Entity()
 export class Todo {
@@ -16,7 +13,7 @@ export class Todo {
     text:string
 
     @Column()
-    archived: TodoState
+    state: TodoState
 
     @ManyToOne(() => TodoList, (todolist) => todolist.todos)
     todolist: TodoList
