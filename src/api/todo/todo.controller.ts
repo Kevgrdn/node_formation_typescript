@@ -1,31 +1,41 @@
 import { Request, Response } from "express";
-import { Controller } from "../../common/interfaces/controller.interface";
+import { BadRequestError } from "../../common/errors";
+import { CrudController } from '../../common/interfaces/controller.class'
+import { createTodolistDTO } from "./dto/todolist.dto";
+import { createTodolist } from "./todo.service";
+import { createTodolistCheck } from './todo.validator'
 
-class TodoController extends Controller {
-   
-    static getAll(req: Request, res: Response){
+class TodosController extends CrudController {
 
-    }
-
-    static getOne(req: Request, res: Response){
-        
-    }
-
-    static create(req: Request, res: Response){
+    static getAll(req: Request, res: Response) {
 
     }
 
-    static update(req: Request, res: Response){
+    static getOne(req: Request, res: Response) {
 
     }
 
-    static replace(req: Request, res: Response){
+    static async create(req: Request, res: Response) {
+        const check = createTodolistCheck(req.body)
+        if (check === true) {
+            const result = await createTodolist(req.body)
+            res.json(result)
+        } else {
+            throw new BadRequestError('bad schema createTodolist')
+        }
+    }
+
+    static remove(req: Request, res: Response) {
 
     }
 
-    static remove(req: Request, res: Response){
+    static update(req: Request, res: Response) {
+
+    }
+
+    static replace(req: Request, res: Response) {
 
     }
 }
 
-export default TodoController
+export default TodosController

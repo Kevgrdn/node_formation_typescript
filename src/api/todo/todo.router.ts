@@ -1,35 +1,37 @@
-import { ApiRoutes } from '../../common/interfaces/routes.interface'
+import { CrudControllerAction } from "../../common/interfaces/controller.class";
+import { ApiRoute } from "../../common/interfaces/route.interface";
 
-const routes: ApiRoutes[] = [
-{
-    method:"get",
-    action:"getAll",
-    path: "/"
-},
-{
-    method:"get",
-    action:"getOne",
-    path: "/:id"
-},
-{
-    method: "post",
-    action: "create",
-    path:"/"
-},
-{
-    method: "put",
-    action: "update",
-    path:"/:id"
-},
-{
-    method: "delete",
-    action: "remove",
-    path:"/:id"
-},
-{
-    method: "patch",
-    action: "replace",
-    path:"/:id"
-},]
+const routes: ApiRoute[] = [
+    {
+        method: "get",
+        path: "/",
+        action: CrudControllerAction.GET_ALL
+    },
+    {
+        method: "get",
+        path: "/:id",
+        action: CrudControllerAction.GET_ONE
+    },
+    {
+        method: "post",
+        path: "/",
+        action: CrudControllerAction.CREATE
+    },
+    {
+        method: "put",
+        path: "/:id",
+        action: CrudControllerAction.REPLACE
+    },
+    {
+        method: "patch",
+        path: "/:id",
+        action: CrudControllerAction.UPDATE
+    },
+    {
+        method: "delete",
+        path: "/:id",
+        action: CrudControllerAction.REMOVE
+    }
+]
 
-export default routes
+export default routes;

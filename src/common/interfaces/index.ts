@@ -1,4 +1,4 @@
-export { Module, ModuleList} from "./modules.interface"
-export { Controller } from "./controller.interface"
-export { ApiRoutes } from "./routes.interface"
-export { TodoState } from "./todo.interface"
+export { Module, ModuleList } from './module.interface'
+export { CrudController } from './controller.class'
+export { ApiRoute } from './route.interface'
+export { TodoState } from './todo.interface'

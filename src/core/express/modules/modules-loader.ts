@@ -1,4 +1,4 @@
-import { Module } from "../../../common/interfaces/modules.interface";
+import { Module } from "../../../common/interfaces/module.interface";
 import { Express, Router} from "express"
 
 export function autoImportAllModules() {

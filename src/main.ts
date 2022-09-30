@@ -1,7 +1,7 @@
 import { config } from 'dotenv'
 import { init } from './core/express/app.bootstrap'
 import { AppDataSource } from './core/db/data-source'
-import { createTestTodoList } from './test-db'
+import { addTodo, createTestTodoList, getTodoListById } from './test-db'
 
 /** Lecture du fichier .env */
 config()
@@ -13,7 +13,11 @@ AppDataSource.initialize().then(() => {
     init()
 
     /** Initialisation du test-db */
-    createTestTodoList().then(console.log);
+    createTestTodoList().then(async (todolist) => {
+        const getTodoList = await getTodoListById(todolist.id)
+
+        await addTodo(getTodoList, "Ceci est mon Texte de TODO")
+    });
 })
 
 
