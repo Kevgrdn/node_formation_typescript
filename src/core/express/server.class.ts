@@ -1,4 +1,5 @@
 import express, { Express } from "express"
+import { errorHandler } from "./error-handler";
 import { simpleLogger } from "./middlewares/simple-logger";
 
 class AppServer {
@@ -17,6 +18,11 @@ class AppServer {
         this.app.use(simpleLogger)
     }
 
+
+    initErrorHandler() {
+        this.app.use(errorHandler)
+    }
+    
     start(port: number){
         this.app.listen(port, () => {
             console.log(`Started on http://127.0.0.1:${port}/`);

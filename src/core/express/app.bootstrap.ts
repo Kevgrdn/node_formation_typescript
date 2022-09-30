@@ -11,4 +11,6 @@ export function init() {
 
     loadModule(module['todos'], appServer.app)
 
+    appServer.initErrorHandler()
+    appServer.start(port)
 }
