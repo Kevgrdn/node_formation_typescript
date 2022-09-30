@@ -13,7 +13,7 @@
        "experimentalDecorators": true,
        "sourceMap": true,
        "noImplicitAny": true,
-       "esModuleInterop":true
+       "esModuleInterop": true
     },
     "files": [
         "src/main.ts"
@@ -22,7 +22,7 @@
         "./src/**/*"
     ],
     "exclude": [
-        "./build", 
+        "./build",
         "./src/**/*.spec.ts"
     ]
 }

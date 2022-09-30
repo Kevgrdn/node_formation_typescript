@@ -13,11 +13,11 @@ AppDataSource.initialize().then(() => {
     init()
 
     /** Initialisation du test-db */
-    createTestTodoList().then(async (todolist) => {
-        const getTodoList = await getTodoListById(todolist.id)
+    // createTestTodoList().then(async (todolist) => {
+    //     const getTodoList = await getTodoListById(todolist.id)
 
-        await addTodo(getTodoList, "Ceci est mon Texte de TODO")
-    });
+    //     await addTodo(getTodoList, "Ceci est mon Texte de TODO")
+    // });
 })
 
 
